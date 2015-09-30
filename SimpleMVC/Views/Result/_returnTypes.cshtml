@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+
+<h4>Controller <span class="glyphicon glyphicon-download file-info" data-file="ResultController.cs"></span> 
+    View <span class="glyphicon glyphicon-download file-info" data-file="index1.cshtml"></span>  
+    Partial View <span class="glyphicon glyphicon-download file-info" data-file="_ReturnTypes.cshtml"></span>  
+    </h4>
+<ul>
+
+    <li>@Html.ActionLink("ViewResult", "ViewResult", "Result") <span class="glyphicon glyphicon-download file-info" data-file="ViewResult.cshtml"></span></li>
+    <li>@Html.ActionLink("ViewResultRedirect", "ViewResultRedirect", "Result" )</li>
+    <li>@Html.ActionLink("PartialViewResult", "PartialViewResult", "Result") <span class="glyphicon glyphicon-download file-info" data-file="_PartialViewResult.cshtml"></span></li>
+    <li>@Html.ActionLink("ContentResult", "ContentResult", "Result")</li>
+    <li>@Html.ActionLink("EmptyResult", "EmptyResult", "Result")</li>
+    <li>@Html.ActionLink("HttpStatusCodeResult", "HttpStatusCodeResult", "Result")</li>
+    <li>@Html.ActionLink("RedirectResult", "RedirectResult", "Result")</li>
+    <li>@Html.ActionLink("JsonResult", "JsonResult", "Result")</li>
+    <li>@Html.ActionLink("FileContentResult", "FileContentResult", "Result")</li>
+</ul>
+
+<script type="text/javascript" src="@Url.Action("Alert","Result",new { message = "Javascript result"})"></script>
+
+

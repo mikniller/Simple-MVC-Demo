@@ -1,0 +1,43 @@
+﻿<img src="~/Content/images/routing.png" />
+<div class="col-md-12">
+    Ruter defineres typisk i application_start i global.asax.
+    <br />
+
+    Default route:
+<pre>
+routes.MapRoute(
+    name: "Default",
+    url: "{controller}/{action}/{id}",
+    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+);
+</pre>
+
+    Route med constraints
+<pre>
+      routes.MapRoute(
+                name: "home_Edit",
+                url: "Edit/{id}",
+                defaults: new { controller = "Home", action = "Edit" },
+                constraints: new { id = "\\d+" }
+            );
+);
+</pre>
+    <a href="/edit/4">/Edit/4</a>
+    <a href="/edit/bent">/Edit/bent</a>
+
+
+Attribute routing
+<pre>
+     //enable attribute routing
+     routes.MapMvcAttributeRoutes();
+
+    // controller attribute
+        [Route("EditMed10")]
+        public ActionResult xxx(int id)
+        {
+            return RedirectToAction("Edit",new {id=10});
+        }
+        ......
+</pre>
+    <a href="editmed10?id=20">editmed10?id=20</a>
+</div>

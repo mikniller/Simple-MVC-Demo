@@ -1,0 +1,34 @@
+﻿@{
+    ViewBag.Title = "Hej med dig";
+}
+
+<div >
+
+
+    <div class="jumbotron">
+        <h1>ASP.NET MVC 5  &  WEBAPI 2</h1>
+        <h2>MVC</h2>
+        <div>
+            Framework til at oprette web applikationer, seneste version er MVC 6 men vi kommer til at koncentrere os om version 5.
+            MVC separerer en applikation i tre hoveddele, modellen, viewet og controlleren og er et alternativ til asp.net webforms.
+        </div>
+    </div>
+    <div class="rest">
+        <img src="~/Content/images/mvc.png" style="display: block;margin-left: auto;margin-right: auto " />
+
+        <h4 class="content" data-content-id="1"><b>M</b>ODEL:</h4>
+        Den del af applikationen hvor domænets logik er implementeret, kan fx være en repræsentation af en database model.
+
+        <h4 class="content" data-content-id="2"><b>V</b>IEW:</h4>
+        Den del af applikationen hvor UI'et vises, er som oftest oprettet på baggrund af en model.
+
+
+        <h4 class="content" data-content-id="3"><B>C</B>ONTROLLER:</h4>
+        Controlleren modtager og håndterer user input, arbejder med modellen og vælger det view der skal rendere modellen, binder modellen med viewet.
+
+
+        <h4>Om</h4>
+        @Html.ActionLink("Om", "About", "Home")
+    </div>
+
+</div>

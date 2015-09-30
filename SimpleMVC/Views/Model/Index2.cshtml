@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Index2";
+}
+
+
+<div class="row">
+
+    <div class="col-md-6">
+        <h2>Misc</h2>
+        <p>
+            <ol>
+                <li>Binding <a href="javascript:toggle('#binding')">Vis</a></li>
+                <li>Validering <a href="javascript:toggle('#validate')">Vis</a></li>
+            </ol>
+        </p>
+    </div>
+
+    <div class="col-md-6">
+        <div id="binding" class="hide">
+            <h2>Binding</h2>
+            @Html.Action("Binding", "Model")
+        </div>
+        <div id="validate" class="hide">
+            <h2>Validering</h2>
+            @Html.Action("Validering", "Model")
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".file-info").click(function () {
+
+                $.get('@(Url.Action("Info", "api/File"))?file=' + $(this).data('file'), function (data) {
+                    console.log(data);
+                    $("#content-info").html('<pre>' + data.FileContent + '</pre>');
+                });
+            });
+        });
+
+        toggle = function (id) {
+            $('#validate').addClass('hide');
+            $('#binding').addClass('hide');
+            $(id).removeClass('hide');
+        }
+    </script>
+}
+
+
+
+

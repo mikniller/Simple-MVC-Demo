@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+
+    <div class="col-md-6">
+        <h2>Controllers</h2>
+        <p>
+            <ol>
+                <li>Pipeline <a href="javascript:toggle('#pipelines')">Vis</a></li>
+                <li>Routing <a href="javascript:toggle('#routing')">Vis</a></li>
+                <li>Forskellige retur typer <a href="javascript:toggle('#retur-typer')">Vis</a></li>
+                <li>Model binding <a href="javascript:toggle('#binding')">Vis</a></li>
+               
+            </ol>
+        </p>
+    </div>
+
+    <div class="col-md-6">
+        <div id="retur-typer" class="hide">
+            <h2>Retur typer</h2>
+            @Html.Action("ReturnTypes", "Result")
+            @*@Html.Partial("_ReturnTypes")*@
+        </div>
+        <div id="pipelines" class="hide">
+            <h2>Pipelines</h2>
+            @Html.Action("PipeLines", "Result")
+         
+        </div>
+        <div id="routing" class="hide">
+            <h2>Routing</h2>
+            @Html.Action("Routing", "Result")
+
+        </div>
+        <div id="binding" class="hide">
+            <h2>Model binding</h2>
+            @Html.Action("Binding", "Result")
+
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".content").click(function () {
+                $("#content-info").load('@(Url.Action("Info", "Home"))?categoryId=' + $(this).data('content-id'));
+            });
+
+            $(".file-info").click(function () {
+
+                $.get('@(Url.Action("Info", "api/File"))?file=' + $(this).data('file'), function (data) {
+                    console.log(data);
+                    $("#content-info").html('<pre>' + data.FileContent + '</pre>');
+                });
+            });
+        });
+
+        toggle = function (id) {
+            $('#retur-typer').addClass('hide');
+            $('#pipelines').addClass('hide');
+            $('#routing').addClass('hide');
+            $('#binding').addClass('hide');
+            $(id).removeClass('hide');
+        }
+    </script>
+}

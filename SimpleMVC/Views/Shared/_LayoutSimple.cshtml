@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <style>
+        .jumbotron, .rest {
+            background-color:#ffd800;
+            border:3px solid blue;
+            padding:13px;
+            margin-bottom:4px;
+        }
+
+        html {
+            color:#0094ff;
+        }
+    </style>
+</head>
+<body>
+    
+
+
+    <div style="width:600px;margin-left: auto; margin-right: auto;">
+        <div style="float:right;margin:10px;">@Html.ActionLink("#","ToggleStyle","Home")  </div>
+        @RenderBody()
+        <hr />
+        <div id="content-info">
+
+        </div>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".content").click(function () {
+                $("#content-info").load('@(Url.Action("Info","Home"))?categoryId=' + $(this).data('content-id'));
+            });
+        });
+    </script>
+</body>
+</html>

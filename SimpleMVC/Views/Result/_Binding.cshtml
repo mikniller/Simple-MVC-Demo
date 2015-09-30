@@ -1,0 +1,33 @@
+﻿Controller:
+<pre>
+     public ActionResult CreateBinding()
+        {
+            return View(new BindingModel());
+        }
+
+ -----
+      public class BindingModel
+    {
+        
+        public string foo { get; set;  }
+        public string bar { get; set; }
+    }
+
+
+</pre>
+View - strongly typed
+<pre>
+model SimpleMVC.Models.BindingModel
+using (Html.BeginForm()) 
+{
+    Html.AntiForgeryToken()
+   
+    .....
+}
+</pre>
+
+@Html.ActionLink("Opret Bordfodbold score", "CreateScore", "Score")
+
+    
+    
+

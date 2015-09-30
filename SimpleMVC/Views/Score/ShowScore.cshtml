@@ -1,0 +1,55 @@
+﻿@model SimpleMVC.Models.ScoreModel
+
+@{
+    ViewBag.Title = "Vis score";
+}
+
+<h2>Vis score</h2>
+
+<div>
+    <h4>Score Model</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Hold1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hold1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hold2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hold2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hold1Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hold1Score)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hold2Score)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hold2Score)
+        </dd>
+
+    </dl>
+</div>
+

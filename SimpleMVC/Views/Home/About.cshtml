@@ -1,0 +1,15 @@
+﻿@model SimpleMVC.Models.AboutModel
+
+@{
+    ViewBag.Title = "Om SuperOffice";
+}
+
+
+<h1>@Model.VersionInformation</h1>
+<ul>
+    @foreach (var rl in Model.ReleaseNotes)
+    {
+        <li>@rl</li>
+    }
+</ul>
+
