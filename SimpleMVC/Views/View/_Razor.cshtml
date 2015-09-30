@@ -1,1 +1,43 @@
 ﻿
+Razor syntax
+<pre>
+@@model SimpleMVC.Models.BindingModel
+@@{
+    ViewBag.Title = "Index";
+    Layout = "_Layout.cshtml";
+}
+
+
+
+@@Model.foo 
+@@Html.raw(Model.foo)
+@@Html.ActionLink("Hjem","Index","Home") 
+
+@@Html.ActionLink("Hjem","Index","Home", new {foo=Model.foo},new {@@class="emphazise", style="width:80px"}) 
+
+@@using Html.BeginForm() {
+    @@Html.EditorFor(model => model.foo)
+}
+
+@@using Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "result" })) {
+    @@Html.EditorFor(model => model.bar)
+}
+
+
+@@for(int i=0;i<10;i++) 
+{
+    @@i
+    @@RenderI(i)
+    
+    &lt;text&gt;Hej&lt;/text&gt;
+    @@:hej
+}
+
+@@helper RenderI(int i) {
+    Jeg er @@i
+}
+
+@@@@ escaper @@
+</pre>
+
+@Html.ActionLink("Opret Bordfodbold score", "CreateScore", "Score") <span class="glyphicon glyphicon-download file-info" data-file="CreateScore.cshtml"></span></li>
