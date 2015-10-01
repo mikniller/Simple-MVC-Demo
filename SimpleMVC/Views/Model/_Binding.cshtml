@@ -1,1 +1,31 @@
-﻿
+﻿En model er som udgangspunkt en helt std c# klasse.<br/>
+
+<pre>
+     public class ScoreModel
+    {
+        public string Hold1 { get; set;  }
+
+        public string Hold2 { get; set; }
+
+        public string Email { get; set; }
+
+        public int Hold1Score { get; set; }
+        public int Hold2Score { get; set; }
+    }
+</pre>
+
+Modellen kan automatisk bindes til en controller metode (action)
+<pre>
+        [HttpPost]
+        public ActionResult CreateScore(ScoreModel model)
+        {
+                return View("ShowScore", model);
+        }
+</pre>     
+
+Og sendes videre til et View
+ <pre>
+      return View("ShowScore", model);
+</pre>     
+
+<img src="~/Content/images/payload.png" />

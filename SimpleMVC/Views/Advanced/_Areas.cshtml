@@ -1,1 +1,27 @@
 ﻿
+Store applikationer => mange controllers & Views</br>
+Areas giver mulighed for at separere applikationen i logiske dele.<br/><br/>
+
+
+<pre>
+    public override void RegisterArea(AreaRegistrationContext context) 
+        {
+            context.MapRoute(
+                "Blog_default",
+                "Blog/{controller}/{action}/{id}",
+                new { action = "Index", id = UrlParameter.Optional }
+            );
+        }   
+
+        global.asax: Application_Start() 
+         ....
+             AreaRegistration.RegisterAllAreas();
+         ...
+
+         @@Html.ActionLink("Vis indlæg","ShowRecent","Blog", new {area="Blog" },null)
+</pre>
+                 
+
+John har impl. kundespecifikt area i Nordea formueplan.
+
+

@@ -1,1 +1,34 @@
-﻿
+﻿MVC kommer med funktionalitet til server og optionelt client side validering.
+
+
+                
+<br /><b>Server side - custom:</b>
+
+<pre>
+    public class ScoreModel
+    {
+        [ScoreValid]
+        public string Hold1 { get; set;  }
+        public string Hold2 { get; set; }
+        public int Hold1Score { get; set; }
+        public int Hold2Score { get; set; }
+    }
+      
+     public class ScoreValidAttribute : ValidationAttribute
+     {
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            object instance = validationContext.ObjectInstance;
+            Type type = instance.GetType();
+            var hold2 =  type.GetProperty("Hold2").GetValue(instance).ToString();
+            int h1s = Int32.Parse(type.GetProperty("Hold1Score").GetValue(instance).ToString());
+            int h2s = Int32.Parse(type.GetProperty("Hold2Score").GetValue(instance).ToString());
+            if(h1s+h2s!=10)
+                return new ValidationResult("Summen af score skal være = 10");
+            if( (value.ToString().ToLower().Contains("john") && h1s &gt; h2s && hold2.ToLower().Contains("mini jacob")))
+                return new ValidationResult("John kan ikke vinde over Michael & Jacob");
+            return null;
+        }
+
+
+</pre>
