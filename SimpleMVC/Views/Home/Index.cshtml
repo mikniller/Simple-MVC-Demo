@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Hej med dig";
+    ViewBag.Title = "MVC Demo";
 }
 
 <div >
@@ -13,7 +13,7 @@
             MVC separerer en applikation i tre hoveddele, modellen, viewet og controlleren og er et alternativ til asp.net webforms.
         </div>
     </div>
-    <div class="rest">
+    <div class="rest" style="padding-bottom: 10px;">
         <img src="~/Content/images/mvc.png" style="display: block;margin-left: auto;margin-right: auto " />
 
         <h4 class="content" data-content-id="1"><b>M</b>ODEL:</h4>
@@ -26,9 +26,9 @@
         <h4 class="content" data-content-id="3"><B>C</B>ONTROLLER:</h4>
         Controlleren modtager og håndterer user input, arbejder med modellen og vælger det view der skal rendere modellen, binder modellen med viewet.
 
-
         <h4>Om</h4>
         @Html.ActionLink("Om", "About", "Home")
+        
     </div>
 
 </div>

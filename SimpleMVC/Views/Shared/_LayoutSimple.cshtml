@@ -5,25 +5,71 @@
     <title>@ViewBag.Title</title>
     <style>
         .jumbotron, .rest {
-            background-color:#ffd800;
-            border:3px solid blue;
-            padding:13px;
-            margin-bottom:4px;
+            background-color: #fafad2;
+            border: 1px solid blue;
+            border-radius: 5px;
+            padding: 5px;
+            margin-bottom: 4px;
+            padding-left: 15px;
         }
 
         html {
-            color:#0094ff;
+            color: #0000cd;
+        }
+
+        hr {
+            border-top: 1px dashed #8c8b8b;
+        }
+
+        .x li {
+            display: inline-block;
+            margin-right: 20px;
+            color: #fff;
+
+            padding: 20px;
+            font-weight: bold;
+            font-style: normal;
+            padding: 6px 12px;
+            margin-bottom: 0;
+            font-size: 14px;
+            text-align: center;
+            vertical-align: middle;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            -webkit-user-select: none;
+            background-color: #0000cd;
+            border-color: #00008b;
+            
+        }
+        .x li a {
+            color: #fff;
+            font-weight: bold;
+            font-style: normal;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    
 
 
-    <div style="width:600px;margin-left: auto; margin-right: auto;">
-        <div style="float:right;margin:10px;">@Html.ActionLink("#","ToggleStyle","Home")  </div>
+
+    <div style="width: 900px; margin-left: auto; margin-right: auto; background-color: #fff;" class="jumbotron">
+        <div class="jumbotron">
+            <div style="float:right;margin:10px;">@Html.ActionLink("#", "ToggleStyle", "Home")  </div>
+            <ul class="x">
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Model", "Index", "Model")</li>
+                <li>@Html.ActionLink("Controller", "Index", "Result")</li>
+                <li>@Html.ActionLink("View", "Index", "View")</li>
+                <li>@Html.ActionLink("Misc", "Index", "Advanced")</li>
+            </ul>
+        </div>
+
+
         @RenderBody()
-        <hr />
+
         <div id="content-info">
 
         </div>
@@ -32,7 +78,8 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/angular")
-    
+    @RenderSection("scripts", required: false)
+
     <script type="text/javascript">
         $(document).ready(function () {
             $(".content").click(function () {

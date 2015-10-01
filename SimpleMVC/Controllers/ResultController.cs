@@ -26,9 +26,10 @@ namespace Demo.Controllers
         }
 
         [OutputCache(Duration = 42)]
+        [ActionProfiler(Disable = true)]
         public JavaScriptResult Alert(string message)
         {
-            var script = "alert('" + message + "')";
+            var script = "alert('" + message + " " + DateTime.Now+"')";
 
             return JavaScript(script);
         }
@@ -59,7 +60,7 @@ namespace Demo.Controllers
                 ContentType = "text/plain"
             };
         }
-
+          [ActionProfiler(Disable = true)]
         public JsonResult JsonResult()
         {
             var data = new
@@ -90,6 +91,7 @@ namespace Demo.Controllers
             return new EmptyResult();
         }
 
+        [ActionProfiler(Disable=true)]
         public FileContentResult FileContentResult()
         {
             var filename = HttpContext.Server.MapPath("~/Content/timthumb.jpg");
