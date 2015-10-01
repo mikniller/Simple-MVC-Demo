@@ -1,0 +1,21 @@
+﻿Konceptuelt som master pages<br/>
+Definerer applikations overordnede layout<br/>
+Views rendereres i sektionen @@RenderBody()<br/>
+Layout kan definere sektioner som Views kan eller skal respektere og rendere
+
+Layouts kan angives:
+<ol>
+    <li>Globalt (/Shared/_ViewStart.cshtml <span class="glyphicon glyphicon-download file-info" data-file="_ViewStart.cshtml"></span>)</li>
+    <li>For Areas ([Area]/Shared/_ViewStart.cshtml <span class="glyphicon glyphicon-download file-info" data-file="_ViewStart.cshtml"></span>)</li>
+    <li>For enkelte views (e.g. index1.cshtml <span class="glyphicon glyphicon-download file-info" data-file="index1.cshtml"></span>)</li>
+</ol>
+
+<pre>
+@@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout"+Session["CustomerId"].cshtml";
+}
+</pre>     
+_Layout.cshtml <span class="glyphicon glyphicon-download file-info" data-file="_Layout.cshtml"></span>
+_LayoutSimple.cshtml <span class="glyphicon glyphicon-download file-info" data-file="_LayoutSimple.cshtml"></span> 
+

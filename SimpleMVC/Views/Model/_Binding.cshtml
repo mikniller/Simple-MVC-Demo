@@ -1,5 +1,5 @@
 ﻿En model er som udgangspunkt en helt std c# klasse.<br/>
-
+ScoreModel klasse <span class="glyphicon glyphicon-download file-info" data-file="ScoreModel.cs"></span>
 <pre>
      public class ScoreModel
     {
@@ -14,7 +14,8 @@
     }
 </pre>
 
-Modellen kan automatisk bindes til en controller metode (action)
+Modellen kan automatisk bindes til en controller metode (action)<br />
+ScoreController : <span class="glyphicon glyphicon-download file-info" data-file="ScoreController.cs"></span>
 <pre>
         [HttpPost]
         public ActionResult CreateScore(ScoreModel model)
@@ -23,7 +24,8 @@ Modellen kan automatisk bindes til en controller metode (action)
         }
 </pre>     
 
-Og sendes videre til et View
+Og sendes videre til et View<br/>
+ShowScore view : <span class="glyphicon glyphicon-download file-info" data-file="ShowScore.cshtml"></span>
  <pre>
       return View("ShowScore", model);
 </pre>     

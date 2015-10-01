@@ -5,18 +5,14 @@
 
 
 <div class="row">
+    <h2>Model:
+    <a href="javascript:toggle('#binding')" class="btn btn-primary top-btn ">Binding</a>
+    <a href="javascript:toggle('#validate')" class="btn btn-primary top-btn  ">Validering</a>
+    </h2>
 
-    <div class="col-md-6">
-        <h2>Model</h2>
-        <p>
-            <ol>
-                <li>Binding <a href="javascript:toggle('#binding')">Vis</a></li>
-                <li>Validering <a href="javascript:toggle('#validate')">Vis</a></li>
-            </ol>
-        </p>
-    </div>
-
-    <div class="col-md-6">
+</div>
+<div class="row">
+   
         <div id="binding" class="hide">
             <h2>Binding</h2>
             @Html.Action("Binding", "Model")
@@ -25,8 +21,6 @@
             <h2>Validering</h2>
             @Html.Action("Validering", "Model")
         </div>
-    </div>
-
 </div>
 
 

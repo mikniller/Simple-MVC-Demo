@@ -5,43 +5,50 @@
 
 <div class="row">
 
-    <div class="col-md-6">
-        <h2>Controllers</h2>
-        <p>
-            <ol>
-                <li>Pipeline <a href="javascript:toggle('#pipelines')">Vis</a></li>
-                <li>Routing <a href="javascript:toggle('#routing')">Vis</a></li>
-                <li>Forskellige retur typer <a href="javascript:toggle('#retur-typer')">Vis</a></li>
-                <li>Model binding <a href="javascript:toggle('#binding')">Vis</a></li>
-               
-            </ol>
-        </p>
+
+    <h2>
+        Controllers
+        <a href="javascript:toggle('#retur-typer')" class="btn btn-primary top-btn ">Forskellige retur typer</a>
+        <a href="javascript:toggle('#routing')" class="btn btn-primary top-btn ">Routing</a>
+        <a href="javascript:toggle('#pipelines')" class="btn btn-primary top-btn ">Pipeline</a>
+    </h2>
+    <ul>
+        <li>
+            Controller
+            <span class="glyphicon glyphicon-download file-info" data-file="ResultController.cs"></span>
+        </li>
+        <li>
+            View
+            <span class="glyphicon glyphicon-download file-info" data-file="index1.cshtml"></span>
+        </li>
+        <li>
+            Partial View
+            <span class="glyphicon glyphicon-download file-info" data-file="_ReturnTypes.cshtml"></span>
+        </li>
+
+    </ul>
+</div>
+
+<div class="row">
+    <div id="retur-typer" class="hide">
+        <h2>Retur typer</h2>
+        @Html.Action("ReturnTypes", "Result")
+        @*@Html.Partial("_ReturnTypes")*@
     </div>
+    <div id="pipelines" class="hide">
+        <h2>Pipelines</h2>
+        @Html.Action("PipeLines", "Result")
 
-    <div class="col-md-6">
-        <div id="retur-typer" class="hide">
-            <h2>Retur typer</h2>
-            @Html.Action("ReturnTypes", "Result")
-            @*@Html.Partial("_ReturnTypes")*@
-        </div>
-        <div id="pipelines" class="hide">
-            <h2>Pipelines</h2>
-            @Html.Action("PipeLines", "Result")
-         
-        </div>
-        <div id="routing" class="hide">
-            <h2>Routing</h2>
-            @Html.Action("Routing", "Result")
+    </div>
+    <div id="routing" class="hide">
+        <h2>Routing</h2>
+        @Html.Action("Routing", "Result")
 
-        </div>
-        <div id="binding" class="hide">
-            <h2>Model binding</h2>
-            @Html.Action("Binding", "Result")
-
-        </div>
     </div>
 
 </div>
+
+
 
 
 @section scripts {

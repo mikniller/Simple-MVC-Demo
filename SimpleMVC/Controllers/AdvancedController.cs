@@ -36,5 +36,16 @@ namespace SimpleMVC.Controllers
         }
 
 
+        public ActionResult Layouts()
+        {
+            return PartialView("_Layouts");
+        }
+
+        public ActionResult Bundling()
+        {
+            return PartialView("_Bundling");
+        }
+
+
     }
 }

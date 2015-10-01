@@ -109,10 +109,7 @@ namespace Demo.Controllers
             return PartialView("_Routing");
         }
 
-        public ActionResult Binding()
-        {
-            return PartialView("_Binding");
-        }
+     
 
      
     }

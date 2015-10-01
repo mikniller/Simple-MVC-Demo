@@ -152,6 +152,7 @@
     <Content Include="Content\images\info_2.png" />
     <Content Include="Content\images\info_3.png" />
     <Content Include="Content\images\mvc.png" />
+    <Content Include="Content\images\payload.png" />
     <Content Include="Content\images\routing.png" />
     <Content Include="Content\timthumb.jpg" />
     <Content Include="favicon.ico" />
@@ -201,7 +202,6 @@
     <Content Include="Views\Result\_PipeLines.cshtml" />
     <Content Include="Views\Result\_Routing.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
-    <Content Include="Views\Result\_Binding.cshtml" />
     <Content Include="Views\Model\Index2.cshtml" />
     <Content Include="Views\Score\CreateScore.cshtml" />
     <Content Include="Views\Score\ShowScore.cshtml" />
@@ -214,6 +214,8 @@
     <Content Include="Views\Model\_Binding.cshtml" />
     <Content Include="Views\Model\_Validering.cshtml" />
     <Content Include="Views\View\_Razor.cshtml" />
+    <Content Include="Views\Advanced\_Layouts.cshtml" />
+    <Content Include="Views\Advanced\_Bundling.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

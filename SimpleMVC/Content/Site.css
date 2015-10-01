@@ -22,3 +22,16 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.top-btn {
+    margin-left:15px;
+    float:right;
+    min-width:120px;
+}
+
+.info-btn {
+    margin-right:15px;
+    float:left;
+    min-width:120px;
+    margin-bottom:5px;
+}

@@ -5,40 +5,50 @@
 
 <div class="row">
 
-    <div class="col-md-4">
-        <h2>Misc</h2>
-        <p>
-            <ol>
-                <li>Validering <a href="javascript:toggle('#validate')">Vis</a></li>
-                <li>Filtre <a href="javascript:toggle('#filters')">Vis</a></li>
-                <li>Areas <a href="javascript:toggle('#areas')">Vis</a></li>
-                <li>Unity <a href="javascript:toggle('#unity')">Vis</a></li>
-            </ol>
-        </p>
+
+    <h2>
+        Misc
+
+
+
+        <a href="javascript:toggle('#bundling')" class="btn btn-primary top-btn ">Bundling</a>
+        <a href="javascript:toggle('#unity')" class="btn btn-primary top-btn ">Unity</a>
+        <a href="javascript:toggle('#filters')" class="btn btn-primary top-btn ">Filtre</a>
+        <a href="javascript:toggle('#validate')" class="btn btn-primary top-btn ">Validering</a>
+        <a href="javascript:toggle('#layouts')" class="btn btn-primary top-btn ">Layouts</a>
+        <a href="javascript:toggle('#areas')" class="btn btn-primary top-btn ">Areas</a>
+    </h2>
     </div>
-
-    <div class="col-md-8">
-        <div id="validate" class="hide">
-            <h2>Validering</h2>
-            @Html.Action("Validate", "Advanced")
-        </div>
-        <div id="filters" class="hide">
-            <h2>Filtre</h2>
-            @Html.Action("Filters", "Advanced")
-
-        </div>
-        <div id="areas" class="hide">
-            <h2>Areas</h2>
-            @Html.Action("Areas", "Advanced")
-
-        </div>
-        <div id="unity" class="hide">
-            <h2>Unity</h2>
-            @Html.Action("Unity", "Advanced")
-
-        </div>
+<div class="row">
+    <div id="bundling" class="hide">
+        <h2>Bundling</h2>
+        @Html.Action("Bundling", "Advanced")
     </div>
+    <div id="validate" class="hide">
+        <h2>Validering</h2>
+        @Html.Action("Validate", "Advanced")
+    </div>
+    <div id="filters" class="hide">
+        <h2>Filtre</h2>
+        @Html.Action("Filters", "Advanced")
 
+    </div>
+    <div id="areas" class="hide">
+        <h2>Areas</h2>
+        @Html.Action("Areas", "Advanced")
+
+    </div>
+    <div id="unity" class="hide">
+        <h2>Unity</h2>
+        @Html.Action("Unity", "Advanced")
+
+    </div>
+    <div id="layouts" class="hide">
+        <h2>Layouts</h2>
+        @Html.Action("Layouts", "Advanced")
+
+    </div>
+</div>
 </div>
 
 
@@ -55,10 +65,12 @@
         });
 
         toggle = function (id) {
+            $('#bundling').addClass('hide');
             $('#validate').addClass('hide');
             $('#filters').addClass('hide');
             $('#areas').addClass('hide');
             $('#unity').addClass('hide');
+            $('#layouts').addClass('hide');
             $(id).removeClass('hide');
         }
     </script>

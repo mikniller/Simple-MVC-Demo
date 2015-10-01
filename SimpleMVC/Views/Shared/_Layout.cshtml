@@ -25,6 +25,7 @@
                     <li>@Html.ActionLink("Controller", "Index", "Result")</li>
                     <li>@Html.ActionLink("View", "Index", "View")</li>
                     <li>@Html.ActionLink("Misc", "Index", "Advanced")</li>
+                    <li>@Html.ActionLink("WebAPI", "Index", "WebAPI")</li>
                 </ul>
             </div>
         </div>
@@ -36,7 +37,14 @@
         <div id="content-info">
 
         </div>
+
     </div>
+    <div class="navbar navbar-inverse " >
+        <div class="breadcrumb">
+        @DateTime.Now
+    </div>
+
+        </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/angular")
